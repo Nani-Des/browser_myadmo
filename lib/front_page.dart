@@ -118,9 +118,9 @@ class _FrontPageState extends State<FrontPage> {
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Container(1
+                    child: Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                      EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                       height: 70,
                       width: 70,
                       decoration: BoxDecoration(
