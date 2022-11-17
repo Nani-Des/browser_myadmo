@@ -1,3 +1,4 @@
+import 'package:browser_myadmo/screens/Admo_Homepage.dart';
 import 'package:flutter/material.dart';
 
 import 'browser.dart';
@@ -8,8 +9,6 @@ class FrontPage extends StatefulWidget {
 }
 
 class _FrontPageState extends State<FrontPage> {
-
-
   final List icons = [
     Icons.add_shopping_cart,
     Icons.account_circle_rounded,
@@ -25,11 +24,7 @@ class _FrontPageState extends State<FrontPage> {
 
   @override
   int _selectedIndex = 0;
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,16 +36,42 @@ class _FrontPageState extends State<FrontPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_rounded),
-            label: 'Store',
+            label: 'Admo',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.library_books),
-            label: 'New',
+            icon: Icon(Icons.add_shopping_cart),
+            label: 'Store',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xFFf36f7c),
-        onTap: _onItemTapped,
+        selectedItemColor: Colors.blueGrey,
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+            
+              break;
+            case 1:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Admo_Homepage(),
+                  ),
+                );
+
+              break;
+            case 2:
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Admo_Homepage(),
+                ),
+              );
+                break;
+          }
+          setState(() {
+            _selectedIndex = index;
+          });
+        }
       ),
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
@@ -97,9 +118,9 @@ class _FrontPageState extends State<FrontPage> {
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Container(
+                    child: Container(1
                       margin:
-                      EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                       height: 70,
                       width: 70,
                       decoration: BoxDecoration(
