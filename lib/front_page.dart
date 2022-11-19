@@ -73,7 +73,7 @@ class _FrontPageState extends State<FrontPage> {
           });
         }
       ),
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Colors.lightBlue,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu),
@@ -81,13 +81,11 @@ class _FrontPageState extends State<FrontPage> {
           color: Colors.white,
           onPressed: () {},
         ),
-        title: Text(
-          'MyAdmo',
-          style: TextStyle(
-            fontSize: 28.0,
-            fontWeight: FontWeight.bold,
-          ),
+        title: Image.asset(
+          "assets/images/logo.png",
+          fit: BoxFit.contain,
         ),
+        toolbarHeight: 88,
         elevation: 0.0,
         actions: <Widget>[
           IconButton(
@@ -104,6 +102,7 @@ class _FrontPageState extends State<FrontPage> {
             },
           ),
         ],
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Column(
         children: <Widget>[

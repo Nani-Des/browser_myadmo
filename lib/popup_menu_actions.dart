@@ -20,7 +20,7 @@ class PopupMenuActions {
   // ignore: constant_identifier_names
   static const String DEVELOPERS = "Developers";
   // ignore: constant_identifier_names
-  static const String INAPPWEBVIEW_PROJECT = "InAppWebView Project";
+  static const String INAPPWEBVIEW_PROJECT = "About Admo";
 
   static const List<String> choices = <String>[
     NEW_TAB,

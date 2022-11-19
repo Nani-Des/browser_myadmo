@@ -30,7 +30,7 @@ class _AndroidSettingsState extends State<AndroidSettings> {
 
     var widgets = <Widget>[
       const ListTile(
-        title: Text("Current WebView Android Settings"),
+        title: Text("Android Settings"),
         enabled: false,
       ),
       ListTile(

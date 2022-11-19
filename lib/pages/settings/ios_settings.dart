@@ -31,7 +31,7 @@ class _IOSSettingsState extends State<IOSSettings> {
 
     var widgets = <Widget>[
       const ListTile(
-        title: Text("Current WebView iOS Settings"),
+        title: Text("iOS Settings"),
         enabled: false,
       ),
       SwitchListTile(

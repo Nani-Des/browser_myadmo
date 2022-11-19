@@ -23,7 +23,7 @@ class _ProjectInfoPopupState extends State<ProjectInfoPopup> {
       RichText(
         text: const TextSpan(children: [
           TextSpan(
-            text: "Do you like this project? Give a ",
+            text: "Do you like this Application( Admo)? Give a ",
             style: TextStyle(color: Colors.black),
           ),
           WidgetSpan(
@@ -47,9 +47,9 @@ class _ProjectInfoPopupState extends State<ProjectInfoPopup> {
                 (states) => Colors.grey.shade300)),
         label: RichText(
           text: const TextSpan(children: [
-            TextSpan(text: "Github: ", style: TextStyle(color: Colors.black)),
+            TextSpan(text: "Play Store: ", style: TextStyle(color: Colors.black)),
             TextSpan(
-                text: "pichillilorenzo/flutter_inappwebview",
+                text: "Play Store Rating",
                 style: TextStyle(color: Colors.blue))
           ]),
         ),
@@ -59,7 +59,7 @@ class _ProjectInfoPopupState extends State<ProjectInfoPopup> {
             key: GlobalKey(),
             webViewModel: WebViewModel(
                 url: WebUri(
-                    "https://github.com/pichillilorenzo/flutter_inappwebview")),
+                    "https:myadmo.com")),
           ));
           Navigator.pop(context);
         },
@@ -81,7 +81,7 @@ class _ProjectInfoPopupState extends State<ProjectInfoPopup> {
           text: const TextSpan(children: [
             TextSpan(text: "Github: ", style: TextStyle(color: Colors.black)),
             TextSpan(
-                text: "pichillilorenzo/browser_myadmo_app",
+                text: "Nani-Des/browser_myadmo",
                 style: TextStyle(color: Colors.blue))
           ]),
         ),
@@ -91,7 +91,7 @@ class _ProjectInfoPopupState extends State<ProjectInfoPopup> {
             key: GlobalKey(),
             webViewModel: WebViewModel(
                 url: WebUri(
-                    "https://github.com/pichillilorenzo/browser_myadmo_app")),
+                    "https://github.com/Nani-Des/browser_myadmo")),
           ));
           Navigator.pop(context);
         },
@@ -106,7 +106,7 @@ class _ProjectInfoPopupState extends State<ProjectInfoPopup> {
           text: const TextSpan(children: [
             TextSpan(
               text:
-                  "Also, if you want, you can support these projects with a donation. Thanks!",
+                  "Enjoy this application and Let us know what you think of it. Thanks!",
               style: TextStyle(color: Colors.black),
             ),
           ]),

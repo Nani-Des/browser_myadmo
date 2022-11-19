@@ -184,10 +184,10 @@ class _CrossPlatformSettingsState extends State<CrossPlatformSettings> {
           if (snapshot.hasData) {
             PackageInfo packageInfo = snapshot.data as PackageInfo;
             packageDescription =
-                "Package Name: ${packageInfo.packageName}\nVersion: ${packageInfo.version}\nBuild Number: ${packageInfo.buildNumber}";
+                "Package Name: Browser_myadmo-Admo\nVersion: ${packageInfo.version}\nBuild Number: ${packageInfo.buildNumber}";
           }
           return ListTile(
-            title: const Text("Flutter Browser Package Info"),
+            title: const Text("Admo Browser Package Info"),
             subtitle: Text(packageDescription),
             onLongPress: () {
               Clipboard.setData(ClipboardData(text: packageDescription));
@@ -203,9 +203,9 @@ class _CrossPlatformSettingsState extends State<CrossPlatformSettings> {
           child: const CircleAvatar(
               backgroundImage: AssetImage("assets/icon/icon.png")),
         ),
-        title: const Text("Flutter InAppWebView Project"),
+        title: const Text("My-Admo Mobile Platform"),
         subtitle: const Text(
-            "https://github.com/pichillilorenzo/flutter_inappwebview"),
+            "https://MyAdmo.com"),
         trailing: const Icon(Icons.arrow_forward),
         onLongPress: () {
           showGeneralDialog(
@@ -264,7 +264,7 @@ class _CrossPlatformSettingsState extends State<CrossPlatformSettings> {
 
     var widgets = <Widget>[
       const ListTile(
-        title: Text("Current WebView Settings"),
+        title: Text("Current WebApp Settings"),
         enabled: false,
       ),
       SwitchListTile(

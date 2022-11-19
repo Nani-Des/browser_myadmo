@@ -25,7 +25,7 @@ class Browser extends StatefulWidget {
 
 class _BrowserState extends State<Browser> with SingleTickerProviderStateMixin {
   static const platform =
-      MethodChannel('com.pichillilorenzo.browser_myadmo.intent_data');
+      MethodChannel('com.example.browser_myadmo.intent_data');
 
   var _isRestored = false;
 
