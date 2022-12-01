@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
-class AnimatedFlutterBrowserLogo extends StatefulWidget {
+import 'browser.dart';
+
+class AnimatedSearchIcon extends StatefulWidget {
   final Duration animationDuration;
   final double size;
 
-  const AnimatedFlutterBrowserLogo({
+  const AnimatedSearchIcon({
     Key? key,
     this.animationDuration = const Duration(milliseconds: 1000),
     this.size = 100.0,
   }) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _AnimatedFlutterBrowserLogoState();
+  State<StatefulWidget> createState() => _AnimatedSearchIconState();
 }
 
-class _AnimatedFlutterBrowserLogoState extends State<AnimatedFlutterBrowserLogo>
+class _AnimatedSearchIconState extends State<AnimatedSearchIcon>
     with TickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -41,9 +43,21 @@ class _AnimatedFlutterBrowserLogoState extends State<AnimatedFlutterBrowserLogo>
       child: SizedBox(
         height: widget.size,
         width: widget.size,
-        child: const CircleAvatar(
-            backgroundColor: Colors.transparent,
-            backgroundImage: AssetImage("assets/images/logo.png")),
+        child: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          child: IconButton(
+            icon: Icon(Icons.search),
+            iconSize: 30.0,
+            color: Colors.black,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Browser(),
+                ),
+              );
+            },
+          ),),
       ),
     );
   }

@@ -28,7 +28,6 @@ class _BrowserState extends State<Browser> with SingleTickerProviderStateMixin {
       MethodChannel('com.example.browser_myadmo.intent_data');
 
   var _isRestored = false;
-
   @override
   void initState() {
     super.initState();
@@ -76,6 +75,7 @@ class _BrowserState extends State<Browser> with SingleTickerProviderStateMixin {
   }
 
   Widget _buildBrowser() {
+
     var currentWebViewModel = Provider.of<WebViewModel>(context, listen: true);
     var browserModel = Provider.of<BrowserModel>(context, listen: true);
 

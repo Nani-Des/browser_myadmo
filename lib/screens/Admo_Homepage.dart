@@ -22,7 +22,7 @@ class Admo_Homepage extends StatelessWidget {
           },
         ),
         elevation: 0.0,
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.lightBlue,
         title: Text(
           "Admo",
           style: TextStyle(color: Colors.black),

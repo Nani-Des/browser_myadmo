@@ -35,7 +35,7 @@ dependencies:
 
   # For material you.
   dynamic_color: ^1.5.4
-
+  google_nav_bar: ^5.0.6
   flutter_inappwebview: ^6.0.0-beta.11
   flutter_downloader: ^1.8.4
   path_provider: ^2.0.11
@@ -100,6 +100,8 @@ flutter:
     - assets/images/ecosia_logo.png
     -  assets/images/logo.png
     - assets/icon/icon.png
+    - assets/images/logo2.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

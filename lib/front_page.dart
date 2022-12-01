@@ -1,6 +1,8 @@
 import 'package:browser_myadmo/screens/Admo_Homepage.dart';
 import 'package:flutter/material.dart';
 
+import 'animated_flutter_browser_logo.dart';
+import 'animated_search_icon.dart';
 import 'browser.dart';
 
 class FrontPage extends StatefulWidget {
@@ -44,7 +46,7 @@ class _FrontPageState extends State<FrontPage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blueGrey,
+        selectedItemColor: Colors.lightBlue,
         onTap: (int index) {
           switch (index) {
             case 0:
@@ -72,13 +74,14 @@ class _FrontPageState extends State<FrontPage> {
             _selectedIndex = index;
           });
         }
+
       ),
       backgroundColor: Colors.lightBlue,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu),
           iconSize: 30.0,
-          color: Colors.white,
+          color: Colors.black,
           onPressed: () {},
         ),
         title: Image.asset(
@@ -91,7 +94,7 @@ class _FrontPageState extends State<FrontPage> {
           IconButton(
             icon: Icon(Icons.search),
             iconSize: 30.0,
-            color: Colors.white,
+            color: Colors.black,
             onPressed: () {
               Navigator.push(
                 context,
@@ -102,7 +105,7 @@ class _FrontPageState extends State<FrontPage> {
             },
           ),
         ],
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.lightBlue,
       ),
       body: Column(
         children: <Widget>[
@@ -163,15 +166,14 @@ class _FrontPageState extends State<FrontPage> {
           ),
           Expanded(
             child: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).accentColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30.0),
-                  topRight: Radius.circular(30.0),
-                ),
-              ),
+
               child: Column(
-                children: <Widget>[],
+                children: <Widget>[
+                  const AnimatedSearchIcon(
+                    size: 80,
+                  ),
+
+                ],
               ),
             ),
           ),
