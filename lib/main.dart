@@ -39,9 +39,7 @@ void main() async {
   TAB_VIEWER_BOTTOM_OFFSET_2 = 140.0;
   TAB_VIEWER_BOTTOM_OFFSET_3 = 150.0;
 
-  await FlutterDownloader.initialize(
-    debug: kDebugMode
-  );
+  await FlutterDownloader.initialize(debug: kDebugMode);
 
   await Permission.camera.request();
   await Permission.microphone.request();

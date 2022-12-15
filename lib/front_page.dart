@@ -1,4 +1,5 @@
 import 'package:browser_myadmo/screens/Admo_Homepage.dart';
+import 'package:browser_myadmo/screens/login.dart';
 import 'package:flutter/material.dart';
 
 import 'animated_flutter_browser_logo.dart';
@@ -27,55 +28,51 @@ class _FrontPageState extends State<FrontPage> {
   @override
   int _selectedIndex = 0;
 
-
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_rounded),
-            label: 'Admo',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_shopping_cart),
-            label: 'Store',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.lightBlue,
-        onTap: (int index) {
-          switch (index) {
-            case 0:
-            
-              break;
-            case 1:
-              Navigator.push(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_rounded),
+              label: 'Admo',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add_shopping_cart),
+              label: 'Store',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.lightBlue,
+          onTap: (int index) {
+            switch (index) {
+              case 0:
+                break;
+              case 1:
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (_) => Admo_Homepage(),
                   ),
                 );
 
-              break;
-            case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => Admo_Homepage(),
-                ),
-              );
                 break;
-          }
-          setState(() {
-            _selectedIndex = index;
-          });
-        }
-
-      ),
+              case 2:
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Login(),
+                  ),
+                );
+                break;
+            }
+            setState(() {
+              _selectedIndex = index;
+            });
+          }),
       backgroundColor: Colors.lightBlue,
       appBar: AppBar(
         leading: IconButton(
@@ -122,7 +119,7 @@ class _FrontPageState extends State<FrontPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Container(
                       margin:
-                      EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                       height: 70,
                       width: 70,
                       decoration: BoxDecoration(
@@ -166,13 +163,11 @@ class _FrontPageState extends State<FrontPage> {
           ),
           Expanded(
             child: Container(
-
               child: Column(
                 children: <Widget>[
                   const AnimatedSearchIcon(
                     size: 80,
                   ),
-
                 ],
               ),
             ),

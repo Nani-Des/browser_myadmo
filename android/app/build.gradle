@@ -53,7 +53,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.pichillilorenzo.flutter_browser"
+        applicationId "com.example.browser_myadmo"
         minSdkVersion 20
         targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()

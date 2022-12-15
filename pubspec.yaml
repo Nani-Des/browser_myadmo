@@ -93,11 +93,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/google_logo.png
-    - assets/images/yahoo_logo.png
-    - assets/images/bing_logo.png
-    - assets/images/duckduckgo_logo.png
-    - assets/images/ecosia_logo.png
     -  assets/images/logo.png
     - assets/icon/icon.png
     - assets/images/logo2.png
