@@ -4,6 +4,7 @@ import 'package:browser_myadmo/front_page.dart';
 import 'package:browser_myadmo/models/browser_model.dart';
 import 'package:browser_myadmo/models/webview_model.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
@@ -32,6 +33,11 @@ const double TAB_VIEWER_TOP_SCALE_BOTTOM_OFFSET = 230.0;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (!kIsWeb &&
+      kDebugMode &&
+      defaultTargetPlatform == TargetPlatform.android) {
+    await InAppWebViewController.setWebContentsDebuggingEnabled(kDebugMode);
+  }
 
   WEB_ARCHIVE_DIR = (await getApplicationSupportDirectory()).path;
 

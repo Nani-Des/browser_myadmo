@@ -25,6 +25,29 @@ class WebViewTab extends StatefulWidget {
 }
 
 class _WebViewTabState extends State<WebViewTab> with WidgetsBindingObserver {
+  final GlobalKey webViewKey = GlobalKey();
+
+  // list of Ad URL filters to be used to block ads loading.
+  final adUrlFilters = [
+    ".*.doubleclick.net/.*",
+    ".*.ads.pubmatic.com/.*",
+    ".*.googlesyndication.com/.*",
+    ".*.google-analytics.com/.*",
+    ".*.adservice.google.*/.*",
+    ".*.adbrite.com/.*",
+    ".*.exponential.com/.*",
+    ".*.quantserve.com/.*",
+    ".*.scorecardresearch.com/.*",
+    ".*.zedo.com/.*",
+    ".*.adsafeprotected.com/.*",
+    ".*.teads.tv/.*",
+    ".*.outbrain.com/.*"
+  ];
+
+  final List<ContentBlocker> contentBlockers = [];
+  var contentBlockerEnabled = true;
+
+
   InAppWebViewController? _webViewController;
   PullToRefreshController? _pullToRefreshController;
   FindInteractionController? _findInteractionController;
@@ -39,6 +62,26 @@ class _WebViewTabState extends State<WebViewTab> with WidgetsBindingObserver {
   void initState() {
     WidgetsBinding.instance.addObserver(this);
     super.initState();
+
+    // for each Ad URL filter, add a Content Blocker to block its loading.
+    for (final adUrlFilter in adUrlFilters) {
+      contentBlockers.add(ContentBlocker(
+          trigger: ContentBlockerTrigger(
+            urlFilter: adUrlFilter,
+          ),
+          action: ContentBlockerAction(
+            type: ContentBlockerActionType.BLOCK,
+          )));
+    }
+
+    // apply the "display: none" style to some HTML elements
+    contentBlockers.add(ContentBlocker(
+        trigger: ContentBlockerTrigger(
+          urlFilter: ".*",
+        ),
+        action: ContentBlockerAction(
+            type: ContentBlockerActionType.CSS_DISPLAY_NONE,
+            selector: ".banner, .banners, .ads, .ad, .advert")));
 
     _pullToRefreshController = kIsWeb
         ? null
@@ -159,8 +202,10 @@ class _WebViewTabState extends State<WebViewTab> with WidgetsBindingObserver {
     initialSettings.isFraudulentWebsiteWarningEnabled = true;
     initialSettings.disableLongPressContextMenuOnLinks = true;
     initialSettings.allowingReadAccessTo = WebUri('file://$WEB_ARCHIVE_DIR/');
+    initialSettings.contentBlockers= contentBlockers;
 
     return InAppWebView(
+      key: webViewKey,
       initialUrlRequest: URLRequest(url: widget.webViewModel.url),
       initialSettings: initialSettings,
       windowId: widget.webViewModel.windowId,
