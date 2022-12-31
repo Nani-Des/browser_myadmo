@@ -80,6 +80,7 @@ class FlutterBrowserApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        canvasColor: Colors.white.withOpacity(0.2),
       ),
       debugShowCheckedModeBanner: false,
       home: FrontPage(),

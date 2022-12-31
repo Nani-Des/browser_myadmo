@@ -1,6 +1,8 @@
 import 'package:browser_myadmo/screens/Admo_Homepage.dart';
 import 'package:browser_myadmo/screens/login.dart';
+import 'package:browser_myadmo/screens/register.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import 'animated_flutter_browser_logo.dart';
 import 'animated_search_icon.dart';
@@ -46,25 +48,57 @@ class _FrontPageState extends State<FrontPage> {
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.lightBlue,
+          selectedItemColor: Colors.yellowAccent,
           onTap: (int index) {
             switch (index) {
               case 0:
                 break;
               case 1:
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => Admo_Homepage(),
-                  ),
-                );
-
+                Alert(
+                  context: context,
+                  type: AlertType.none,
+                  title: "ACCOUNT ACCESS",
+                  style: AlertStyle(
+                      titleStyle: TextStyle(fontWeight: FontWeight.w800),
+                      descStyle:
+                      TextStyle(fontWeight: FontWeight.w400, fontSize: 18)),
+                  desc: "Account Sign Up or In?",
+                  buttons: [
+                    DialogButton(
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Login())),
+                      color: Colors.lightBlue,
+                      child: const Text(
+                        "SIGN IN",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: 'DM-Sans'),
+                      ),
+                    ),
+                    DialogButton(
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Login())),
+                      color: Colors.white,
+                      border: Border.all(color: Colors.lightBlue),
+                      child: Text(
+                        "SIGN UP",
+                        style: TextStyle(
+                            color: Colors.lightBlue,
+                            fontSize: 16,
+                            fontFamily: 'DM-Sans',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ).show();
                 break;
               case 2:
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => Login(),
+                    builder: (_) => Register(),
                   ),
                 );
                 break;
@@ -119,7 +153,7 @@ class _FrontPageState extends State<FrontPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                      EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                       height: 70,
                       width: 70,
                       decoration: BoxDecoration(
